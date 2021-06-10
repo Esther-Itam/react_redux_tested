@@ -1,20 +1,15 @@
 import React from 'react';
 import { shallow, mount, render } from 'enzyme';
 import renderer from 'react-test-renderer';
-
 import HomeContainer, { Home } from '../components/Home';
-
 import { Provider } from 'react-redux';
 import '../setUpTests';
-
 import { addInputs, subtractInputs } from '../actions/calculatorActions';
 import { createStore } from 'redux';
 import calculatorReducers from '../reducers/calculatorReducers';
 
 describe('HOME snapshot', () => {
 	it('It renders without crashing', () => {
-		/* const home = renderer.create(<Home />).toJSON();
-		expect(home).toMatchSnapshot(); */
 		const home = shallow(<Home />);
 		expect(home).toMatchSnapshot();
 	});
@@ -45,7 +40,6 @@ describe('HOME shallow description', () => {
 	});
 	it('Contains input1', () => {
 		//Créer le expect
-		//let input1 = wrapper.find('input').at(0);
 		expect(wrapper.find('input').at(0).getElement()['ref'].toString()).toEqual('input1');
 	});
 	it('Contains input2', () => {
@@ -58,8 +52,6 @@ describe('HOME shallow description', () => {
 	});
 	it('Contains button with id="add"', () => {
 		//Créer le expect
-		//expect(wrapper.find('button').at(0).find('#add').text()).toEqual('Add')
-		//expect(wrapper.find('#add').type()).toEqual('button');
 		expect(wrapper.find('button').at(0).find('#add').length).toEqual(1);
 	});
 	it('Contains button with id="substract"', () => {

@@ -1,5 +1,6 @@
 import { addInputs, subtractInputs, fetchRandomNumber } from '../actions/calculatorActions';
 import '../setUpTests';
+
 describe('ACTIONS - Test calculatorActions', () => {
 	it('actionCreator addInputs', () => {
 		const add = addInputs(50);
